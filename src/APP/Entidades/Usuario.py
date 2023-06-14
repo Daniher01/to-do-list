@@ -1,4 +1,4 @@
-from Tarea import Tarea
+#from Tarea import Tarea
 
 class Usuario():
     
@@ -26,8 +26,6 @@ class Usuario():
     def nombre(self, nombre):
         self.__nombre = nombre       
     
-    def agregar_tarea(self, tarea:Tarea):
+    def agregar_tarea(self, tarea):
         self.__tareas.append(tarea)
         return True
-        
-   

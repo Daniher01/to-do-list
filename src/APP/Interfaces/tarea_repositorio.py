@@ -1,6 +1,6 @@
 from abc import ABC, abstractmethod
-from Entidades.Tarea import Tarea
-from Entidades.Usuario import Usuario
+from ..Entidades.Tarea import Tarea
+from ..Entidades.Usuario import Usuario
 
 class TareaRepositorio(ABC):
     

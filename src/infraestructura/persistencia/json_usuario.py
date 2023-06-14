@@ -1,4 +1,4 @@
-from app.Entidades import Usuario
+from app.Entidades.Usuario import Usuario
 from app.Interfaces.usuario_repositorio import UsuarioRepositorio
 import json
 
@@ -8,6 +8,11 @@ class JsonUsuario(UsuarioRepositorio):
         self.archivo = archivo
         self.usuario = usuario
         
+    def to_dict(self):
+        return {
+            'nombre': self.usuario.nombre
+        }    
+        
     def cargar_datos(self):
         with open(self.archivo, 'r') as archivo:
             datos = json.load(archivo)
@@ -15,7 +20,8 @@ class JsonUsuario(UsuarioRepositorio):
     
     def guardar(self):
         with open(self.archivo, "w") as archivo:
-            json.dump(self.usuario, archivo, indent=4)
+            json.dump(self.to_dict(), archivo, indent=4)
+            archivo.close()
     
     def obtener(self, nombre):
         pass
@@ -23,3 +29,4 @@ class JsonUsuario(UsuarioRepositorio):
 usuario = Usuario('daniel')
 enjson = JsonUsuario('datos.json', usuario)
 enjson.guardar()    
+enjson.cargar_datos()

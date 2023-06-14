@@ -1,5 +1,5 @@
 from abc import ABC, abstractmethod
-from Entidades.Usuario import Usuario
+from ..Entidades.Usuario import Usuario
 
 class UsuarioRepositorio(ABC):
     

@@ -1,0 +1,1 @@
+from infraestructura.persistencia import json_usuario
